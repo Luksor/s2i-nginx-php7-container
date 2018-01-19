@@ -29,8 +29,12 @@ RUN yum install -y --setopt=tsflags=nodocs --enablerepo=centosplus \
     php70u-mcrypt \
     php70u-opcache \
     php70u-pdo \
-    php70u-pdo \
+    php70u-pdo_mysql \
     php70u-xml
+
+RUN curl --silent --location https://rpm.nodesource.com/setup_9.x |  bash -
+RUN yum install -y nodejs
+
 #RUN rpm -V nginx php70w-cli php70w-fpm php70w-opcache
 RUN yum clean all -y
 
