@@ -19,5 +19,20 @@ if [ -f composer.json ]; then
   fi
 fi
 
+if [ -f package.json ]; then
+  echo "Found 'package.json', installing dependencies using npm... "
+
+  # Install npm dependancies
+  npm install
+fi
+
+if [ -f Gruntfile.js ]; then
+  echo "Found 'Gruntfile.js', installing dependencies using grunt... "
+
+  # Install grunt dependancies
+  node_modules/grunt/bin/grunt
+fi
+
+
 # Fix source directory permissions
 fix-permissions ./
