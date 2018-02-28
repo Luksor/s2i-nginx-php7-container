@@ -35,6 +35,9 @@ RUN yum install -y --setopt=tsflags=nodocs --enablerepo=centosplus \
 RUN curl --silent --location https://rpm.nodesource.com/setup_9.x |  bash -
 RUN yum install -y nodejs
 
+# Packages required by wkhtmltopdf
+RUN yum install -y urw-fonts libXext libXrender fontconfig libfontconfig.so.1
+
 #RUN rpm -V nginx php70w-cli php70w-fpm php70w-opcache
 RUN yum clean all -y
 
